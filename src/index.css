@@ -1,13 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+.watermark__h1 {
+  margin: 0;
+  color: rgba(255, 255, 255, 1);
+  transition: all 2s ease;
+  font-size: 140px;
+  opacity: 0.05;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.watermark__h1 a {
+  margin-left: 1rem;
+  -webkit-text-stroke: 0.25px white;
+  font-size: 2rem;
+  color: transparent;
+}
+
+@media screen and (min-width: 700px) {
+  .watermark__h1 a {
+    -webkit-text-stroke: 1px white;
+    margin-left: 5rem;
+    font-size: 5rem;
+  }
+}
+
+.watermark-container3 {
+  display: flex;
+  animation: scrollText 60s infinite linear;
+  user-select: none;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.watermark-container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  z-index: 1;
+  bottom: 0;
+}
+
+.watermark-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  transform: scale(2);
+  transition: all 1s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hover-element::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(238, 231, 231);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+.hover-element {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-element:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.scrollingdiv {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.scrollingtext {
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+
+  -moz-animation: my-animation 100s linear infinite;
+  -webkit-animation: my-animation 100s linear infinite;
+  animation: my-animation 100s linear infinite;
+}
+
+@-moz-keyframes my-animation {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+  50% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  50% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes my-animation {
+  0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.customgrid {
+  display: grid;
+  width: 80vw;
+  margin: 0 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
