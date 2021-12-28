@@ -12,12 +12,13 @@ export const Landing = ({ setIsOpen, isOpen }) => {
           <p className="tracking-wide md:tracking-widest relative after:content-['}'] after:-right-4 after:absolute after:text-orange-500 before:content-['{'] before:-left-4 before:absolute before:text-orange-500 select-none">
             {one}
           </p>
-          <h1 className="font-extrabold tracking-wide text-4xl md:text-6xl">
+          <h1 className="font-extrabold tracking-wide text-4xl md:text-6xl select-none">
             Nicolai Bernhard
           </h1>
           <a
             href="#contact-me"
-            className="tracking-wide md:tracking-widest relative after:content-['}'] after:-right-4 after:absolute after:text-orange-500 before:content-['{'] before:-left-4 before:absolute before:text-orange-500 select-none"
+            onClick={() => setIsOpen(true)}
+            className="tracking-wide md:tracking-widest relative after:content-['}'] after:-right-4 after:absolute after:text-orange-500 before:content-['{'] before:-left-4 before:absolute before:text-orange-500 select-none hover:scale-110 transition-all hover:text-orange-300"
           >
             {two}
           </a>

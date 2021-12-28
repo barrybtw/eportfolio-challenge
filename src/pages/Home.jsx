@@ -1,6 +1,5 @@
 import { Techstack } from "../components";
 import { Aboutme } from "../components/Aboutme";
-import { Contact } from "../components/Contact";
 import { Landing } from "../components/Landing";
 import { ParticleBackground } from "../components/Particles";
 import { FormModal } from "../components/FormModal";
@@ -32,9 +31,8 @@ export const Home = () => {
       <ParticleBackground>
         <FormModal isOpen={isOpen} setIsOpen={setIsOpen} />
         <Landing setIsOpen={setIsOpen} isOpen={isOpen} />
-        <Aboutme />
+        <Aboutme setIsOpen={setIsOpen} />
         <Techstack />
-        <Contact />
       </ParticleBackground>
     </div>
   );

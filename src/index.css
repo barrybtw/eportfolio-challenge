@@ -19,7 +19,7 @@ html::-webkit-scrollbar {
   color: rgba(255, 255, 255, 1);
   transition: all 2s ease;
   font-size: 140px;
-  opacity: 0.05;
+  opacity: 0.2;
   font-weight: bolder;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -84,7 +84,7 @@ html::-webkit-scrollbar {
   padding: 0;
 }
 
-.hover-element::after {
+.hover-element::before {
   content: "";
   position: absolute;
   width: 80%;
@@ -101,7 +101,7 @@ html::-webkit-scrollbar {
   position: relative;
 }
 
-.hover-element:hover::after {
+.hover-element:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -153,19 +153,68 @@ html::-webkit-scrollbar {
   }
 }
 
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
 .customgrid {
   display: grid;
-  width: 80vw;
+  width: 60vw;
   margin: 0 5rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 4rem;
+  overflow: hidden;
+}
+
+.spooky {
+  min-height: calc(100vh + 20vh);
+}
+
+.maxheight {
+  max-height: 100%;
+}
+
+.coolgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+@media screen and (min-width: 835px) {
+  .coolgrid {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+}
+@media screen and (min-width: 1254px) {
+  .coolgrid {
+    grid-template-columns: repeat(3, minmax(145px, 1fr));
+  }
+}
+@media screen and (min-width: 1417px) {
+  .coolgrid {
+    grid-template-columns: repeat(4, minmax(145px, 1fr));
+  }
+}
+
+.invalidCheck:not([value=""]):not(:focus):invalid {
+  border: 1px solid rgb(255, 45, 45);
+}
+.invalidCheck:not([value=""]):not(:focus):invalid {
+  border: 1px solid rgb(255, 45, 45);
+}
+
+.emailcheck:not([value=""]):not(:focus):user-invalid {
+  border: 1px solid rgb(255, 45, 45);
+}
+
+.specialBefore {
+  display: inline-block;
+  position: relative;
+}
+.specialBefore:before {
+  content: "~~~~~~~~~~~~";
+  font-size: 0.6em;
+  font-weight: 700;
+  font-family: Times New Roman, Serif;
+  color: red;
+  width: 100%;
+  position: absolute;
+  bottom: 12px;
+  left: 0px;
+  z-index: 51;
 }

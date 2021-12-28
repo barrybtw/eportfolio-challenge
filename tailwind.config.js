@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         background: "rgb(35, 39, 65)",
         nasa: "#033A92",
+        form: "#363940",
       },
       fontSize: {
         enormus: "17rem",
