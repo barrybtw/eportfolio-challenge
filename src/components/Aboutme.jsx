@@ -1,4 +1,4 @@
-export const Aboutme = ({ setIsOpen }) => {
+export const Aboutme = () => {
   return (
     <section
       id="about-me"
